@@ -1,24 +1,25 @@
-"use client";
-
-import { ApolloProvider } from "@apollo/client";
 import { Inter } from "next/font/google";
-import useClient from "./util/useClient";
+import { ApolloWrapper } from "@/components/ApolloWrapper";
+import type { Metadata } from "next";
 
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "SpaceX Ships",
+};
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const client = useClient();
   return (
     <html lang="en">
-      <ApolloProvider client={client}>
-        <body className={inter.className}>{children}</body>
-      </ApolloProvider>
+      <body className={inter.className}>
+        <ApolloWrapper>{children}</ApolloWrapper>
+      </body>
     </html>
   );
 }

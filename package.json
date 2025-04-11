@@ -10,7 +10,8 @@
     "generate:types": "graphql-codegen"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.17",
+    "@apollo/client": "^3.13.6",
+    "@apollo/client-integration-nextjs": "^0.12.1",
     "@types/node": "20.4.5",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
