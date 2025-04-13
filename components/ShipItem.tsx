@@ -33,9 +33,9 @@ export function ShipItem({
           <div className="text-xs">{ship.id}</div>
         </div>
         <div>Class: {ship.class ?? "Unknown"}</div>
-        <div>Home port: {ship.home_port}</div>
+        <div>Home port: {ship.home_port ?? "Unknown"}</div>
         <div>Year built: {ship.year_built ?? "Unknown"}</div>
-        <div>Type: {ship.type}</div>
+        <div>Type: {ship.type ?? "Unknown"}</div>
         <div>Active: {ship.active ? "Yes" : "No"}</div>
         <div>Missing attributes: {missingAttributes ?? "Unknown"}</div>
       </div>

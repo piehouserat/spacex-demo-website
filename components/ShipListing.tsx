@@ -28,7 +28,7 @@ export const ShipListing = ({
       <div className="grid grid-cols-2 gap-4">
         {ships.map((ship) => {
           const missingAttrs = missingAttributesData.find(
-            (x) => x.shipId === ship.id,
+            (x) => x.shipId === ship.id
           )?.missingCount;
 
           return ship ? (
@@ -89,18 +89,18 @@ export const ShipListing = ({
               Mission data:
             </div>
             {selectedShip?.missions?.length ? (
-              <table className="min-w-full border border-collapse">
+              <table className="min-w-full border border-collapse text-gray-900">
                 <thead>
                   <tr className="border-b">
                     <th className="py-2 px-4 text-left">Mission</th>
-                    <th className="py-2 px-4 text-left">Flight</th>
+                    <th className="py-2 px-4 text-left">Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   {selectedShip?.missions?.map((mission) => (
-                    <tr key={mission?.name} className="border-b">
+                    <tr key={mission?.id} className="border-b">
                       <td className="py-2 px-4">{mission?.name}</td>
-                      <td className="py-2 px-4">{mission?.flight}</td>
+                      <td className="py-2 px-4">{mission?.description}</td>
                     </tr>
                   ))}
                 </tbody>

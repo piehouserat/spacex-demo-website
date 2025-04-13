@@ -13,22 +13,25 @@ const ships = gql`
       type
       missions {
         id
-        flight
         name
+        description
       }
     }
   }
 `;
 
 const shipMissingAttributes = gql`
-  query shipMissingAttributes($attributes: [String!]!, $limit: Int!, $offset: Int!) {
-    shipMissingAttributes(input: {
-      attributes: $attributes,
-      pagination: {
-        limit: $limit,
-        offset: $offset
+  query shipMissingAttributes(
+    $attributes: [String!]!
+    $limit: Int!
+    $offset: Int!
+  ) {
+    shipMissingAttributes(
+      input: {
+        attributes: $attributes
+        pagination: { limit: $limit, offset: $offset }
       }
-    }) {
+    ) {
       shipId
       missingCount
     }

@@ -13,7 +13,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  query ships($limit: Int!, $offset: Int!) {\n    ships(input: { pagination: { limit: $limit, offset: $offset } }) {\n      id\n      name\n      image\n      active\n      class\n      year_built\n      home_port\n      type\n      missions {\n        id\n        flight\n        name\n      }\n    }\n  }\n": types.ShipsDocument,
+    "\n  query ships($limit: Int!, $offset: Int!) {\n    ships(input: { pagination: { limit: $limit, offset: $offset } }) {\n      id\n      name\n      image\n      active\n      class\n      year_built\n      home_port\n      type\n      missions {\n        id\n        name\n        description\n      }\n    }\n  }\n": types.ShipsDocument,
     "\n  query shipMissingAttributes($attributes: [String!]!, $limit: Int!, $offset: Int!) {\n    shipMissingAttributes(input: {\n      attributes: $attributes,\n      pagination: {\n        limit: $limit,\n        offset: $offset\n      }\n    }) {\n      shipId\n      missingCount\n    }\n  }\n": types.ShipMissingAttributesDocument,
 };
 
@@ -34,7 +34,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query ships($limit: Int!, $offset: Int!) {\n    ships(input: { pagination: { limit: $limit, offset: $offset } }) {\n      id\n      name\n      image\n      active\n      class\n      year_built\n      home_port\n      type\n      missions {\n        id\n        flight\n        name\n      }\n    }\n  }\n"): (typeof documents)["\n  query ships($limit: Int!, $offset: Int!) {\n    ships(input: { pagination: { limit: $limit, offset: $offset } }) {\n      id\n      name\n      image\n      active\n      class\n      year_built\n      home_port\n      type\n      missions {\n        id\n        flight\n        name\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query ships($limit: Int!, $offset: Int!) {\n    ships(input: { pagination: { limit: $limit, offset: $offset } }) {\n      id\n      name\n      image\n      active\n      class\n      year_built\n      home_port\n      type\n      missions {\n        id\n        name\n        description\n      }\n    }\n  }\n"): (typeof documents)["\n  query ships($limit: Int!, $offset: Int!) {\n    ships(input: { pagination: { limit: $limit, offset: $offset } }) {\n      id\n      name\n      image\n      active\n      class\n      year_built\n      home_port\n      type\n      missions {\n        id\n        name\n        description\n      }\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
